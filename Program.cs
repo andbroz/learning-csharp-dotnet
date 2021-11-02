@@ -21,6 +21,9 @@ namespace _02_donet_debuging
       Console.WriteLine("#### Mathematical Operators ####");
       mathOperators();
       castingDataType();
+      Console.WriteLine("Random number");
+      getRandomData();
+
       //   Console.ReadKey(true);
     }
     static int add(int a, int b)
@@ -44,7 +47,6 @@ namespace _02_donet_debuging
       Console.WriteLine("Product:" + product);
       Console.WriteLine("Quotient:" + quotient);
       Console.WriteLine("DecimalQuotient:" + decimalQuotient);
-
     }
 
     static void castingDataType()
@@ -53,6 +55,13 @@ namespace _02_donet_debuging
       int second = 5;
       decimal quotient = (decimal)first / (decimal)second;
       Console.WriteLine("casting data type: " + quotient);
+    }
+
+    static void getRandomData(){
+      Random dice = new Random();
+
+      int roll = dice.Next(100);
+      Console.WriteLine(roll);
     }
   }
 }
