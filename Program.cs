@@ -24,7 +24,11 @@ namespace _02_donet_debuging
       // Console.WriteLine("Random number");
       // getRandomData();
 
-      randomGame();
+      // randomGame();
+      // arraysExcercise();
+      // inventoryArray();
+      detectFraud();
+
       //   Console.ReadKey(true);
     }
     static int add(int a, int b)
@@ -112,5 +116,71 @@ namespace _02_donet_debuging
         Console.WriteLine("You win a kitten!");
       }
     }
+
+    static void arraysExcercise()
+    {
+
+      // define string array
+      /*  string[] fraudulentOrderIds = new string[3];
+
+       fraudulentOrderIds[0] = "A123";
+       fraudulentOrderIds[1] = "B456";
+       fraudulentOrderIds[2] = "C789";
+       // fraudulentOrderIds[3] = "D101"; index out of range error */
+
+      // declare and initialize variable with string array
+      string[] fraudulentOrderIds = { "A123", "B456", "C789" };
+
+      Console.WriteLine($"First: {fraudulentOrderIds[0]}");
+      Console.WriteLine($"Second: {fraudulentOrderIds[1]}");
+      Console.WriteLine($"Third: {fraudulentOrderIds[2]}");
+
+      fraudulentOrderIds[0] = "F500";
+
+      Console.WriteLine($"Reassign first: {fraudulentOrderIds[0]}");
+
+      // getting size of array ->using  .Length property
+      Console.WriteLine($"There are {fraudulentOrderIds.Length} fraudulent orders to process.");
+
+
+      string[] names = { "Bob", "Konrad", "Greg" };
+
+      // looping trought array
+      foreach (string name in names)
+      {
+        Console.WriteLine(name);
+      }
+
+    }
+
+    static void inventoryArray()
+    {
+      int[] inventory = { 200, 450, 700, 175, 250 };
+      int sum = 0;
+      int bin = 0;
+
+      foreach (int items in inventory)
+      {
+        sum += items;
+        bin++;
+        Console.WriteLine($"Bin {bin} = {items} items (Running total: {sum})");
+      }
+
+      Console.WriteLine($"We have {sum} items in the inventory");
+
+    }
+    static void detectFraud()
+    {
+      string[] fraudID = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
+
+      foreach (string item in fraudID)
+      {
+        if (item.StartsWith('B'))
+        {
+          Console.WriteLine(item);
+        }
+      }
+    }
   }
+
 }
